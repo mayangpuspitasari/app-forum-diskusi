@@ -17,35 +17,50 @@ function ThreadInput({ addThread }) {
   }
 
   return (
-    <form className="thread-input" onSubmit={onSubmit}>
+    <form
+      className="thread-input bg-white p-6 rounded-lg shadow-lg max-w-2xl mx-auto"
+      onSubmit={onSubmit}
+    >
+      {/* Title Input */}
       <input
         type="text"
-        placeholder="Title"
+        placeholder="Enter thread title"
         name="title"
         id="title"
         value={title}
         onChange={onTitleChange}
+        className="w-full mb-4 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
+
+      {/* Category Input */}
       <input
         type="text"
-        placeholder="Category"
+        placeholder="Enter category"
         name="category"
         id="category"
         value={category}
         onChange={onCategoryChange}
         required
+        className="w-full mb-4 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
+
+      {/* Body Input */}
       <div
-        className="input-textarea"
-        placeholder="Threads"
+        className="input-textarea w-full mb-4 px-4 py-2 border rounded-lg min-h-[150px] focus:outline-none focus:ring-2 focus:ring-blue-500"
+        placeholder="Write your thread content here..."
         name="body"
         id="body"
         value={body}
         onInput={onInputBody}
         contentEditable
       />
-      <button type="submit">
-        Create
+
+      {/* Submit Button */}
+      <button
+        type="submit"
+        className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-semibold"
+      >
+        Create Thread
       </button>
     </form>
   );

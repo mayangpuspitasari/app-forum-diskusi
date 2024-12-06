@@ -19,9 +19,14 @@ function ThreadPage() {
   }));
 
   return (
-    <div className="thread-page-box">
-      <div className="full">
-        <ThreadsList threads={threadList} />
+    <div className="thread-page-container bg-gray-100 min-h-screen py-8 px-4">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">
+          Threads
+        </h1>
+        <div className="bg-white shadow-md rounded-lg p-6">
+          <ThreadsList threads={threadList} />
+        </div>
       </div>
     </div>
   );

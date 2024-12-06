@@ -6,24 +6,26 @@ import { asyncRegisterUser } from '../states/users/action';
 
 function RegisterPage() {
   const navigate = useNavigate();
-  const dispatch = useDispatch(); // @TODO: get dispatch function from store
+  const dispatch = useDispatch();
 
   const onRegister = ({ email, name, password }) => {
-    // @TODO: dispatch async action to register
     dispatch(asyncRegisterUser({ email, name, password }));
     navigate('/');
   };
 
   return (
-    <section className="register-page">
-      <article className="register-page__main">
-        <h2>Create your account</h2>
+    <section className="register-page min-h-screen flex items-center justify-center bg-gray-900 text-white">
+      <article className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md">
+        <h2 className="text-2xl font-bold text-center mb-6">Create Your Account</h2>
         <RegisterInput register={onRegister} />
-
-        <p>
-          Already have an account?
-          {' '}
-          <Link to="/">Login</Link>
+        <p className="mt-4 text-center text-sm">
+          Already have an account?{' '}
+          <Link
+            to="/"
+            className="text-blue-400 hover:text-blue-500 transition"
+          >
+            Login
+          </Link>
         </p>
       </article>
     </section>

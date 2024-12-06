@@ -16,44 +16,62 @@ function ThreadItem({
   user,
 }) {
   return (
-    <div className="profile">
+    <div className="profile bg-white rounded-lg shadow-md p-4 border border-gray-200">
       {/* profile */}
-      <div className="thread-item">
-        <img src={user.avatar} alt="avatar" className="thread-img" />
-        <h3 className="text-thread">{user.name}</h3>
-        <span className="thread-tgl">
-          ▫
-          {postedAt(createdAt)}
-        </span>
+      <div className="thread-item flex items-center space-x-4">
+        <img
+          src={user.avatar}
+          alt="avatar"
+          className="w-12 h-12 rounded-full border-2 border-gray-300"
+        />
+        <div>
+          <h3 className="text-lg font-semibold text-gray-800">{user.name}</h3>
+          <span className="thread-tgl text-sm text-gray-500">
+            ▫ {postedAt(createdAt)}
+          </span>
+        </div>
       </div>
       {/* body */}
-      <div className="mt-2">
+      <div className="mt-4">
         <Link
           to={`/threads/${id}`}
+          className="text-xl font-bold text-blue-600 hover:underline"
         >
           {title}
         </Link>
-        <div className="threadBody">{HTMLReactParser(body)}</div>
-        <div className="thread-category">
+        <div className="threadBody mt-2 text-gray-700">{HTMLReactParser(body)}</div>
+        <div className="thread-category mt-3">
           <TagItem text={category} />
         </div>
       </div>
       {/* footer */}
-      <div className="item-button">
-        <button type="submit">
-          <AiTwotoneLike />
+      <div className="item-button mt-4 flex space-x-4 text-gray-600">
+        <button
+          type="submit"
+          className="flex items-center space-x-1 hover:text-blue-500"
+        >
+          <AiTwotoneLike className="w-5 h-5" />
+          <span>Like</span>
         </button>
-        <button type="submit">
-          <AiOutlineDislike />
-          {' '}
+        <button
+          type="submit"
+          className="flex items-center space-x-1 hover:text-red-500"
+        >
+          <AiOutlineDislike className="w-5 h-5" />
+          <span>Dislike</span>
         </button>
-        <button type="submit">
-          <FaRegComment className="text-xl" />
+        <button
+          type="submit"
+          className="flex items-center space-x-1 hover:text-green-500"
+        >
+          <FaRegComment className="w-5 h-5" />
+          <span>Comment</span>
         </button>
       </div>
     </div>
   );
 }
+
 
 const userShape = {
   id: PropTypes.string.isRequired,

@@ -6,7 +6,10 @@ function ThreadList({ threads }) {
   return (
     <div className="list-talk">
       {threads.map((thread) => (
-        <ThreadItem key={thread.id} {...thread} />
+        <div key={thread.id} className="mb-6">
+          {/* Memberikan jarak bawah untuk setiap postingan */}
+          <ThreadItem {...thread} />
+        </div>
       ))}
     </div>
   );
@@ -15,4 +18,5 @@ function ThreadList({ threads }) {
 ThreadList.propTypes = {
   threads: PropTypes.arrayOf(PropTypes.shape(threadItemShape)).isRequired,
 };
+
 export default ThreadList;
