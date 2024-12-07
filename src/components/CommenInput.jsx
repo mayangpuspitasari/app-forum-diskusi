@@ -16,10 +16,7 @@ export default function CommentInput({ addComment }) {
         value={comment}
         onChange={handleComment}
       />
-      <button
-        type="submit"
-        onClick={() => addComment({ content: comment })}
-      >
+      <button type="submit" onClick={() => addComment({ content: comment })}>
         <IoSend />
       </button>
     </div>

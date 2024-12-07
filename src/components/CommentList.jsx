@@ -8,9 +8,7 @@ function CommentsList({ addComment, comments, authUser }) {
   return (
     <div className="comment-list">
       <CommentInput addComment={addComment} />
-      <h1>
-        Comments
-      </h1>
+      <h1>Comments</h1>
       {comments.length > 0 ? (
         comments.map((comment) => (
           <CommentItem key={comment.id} authUser={authUser} {...comment} />

@@ -45,7 +45,9 @@ const api = (() => {
       throw new Error(message);
     }
 
-    const { data: { user } } = responseJson;
+    const {
+      data: { user },
+    } = responseJson;
 
     return user;
   }
@@ -70,7 +72,9 @@ const api = (() => {
       throw new Error(message);
     }
 
-    const { data: { token } } = responseJson;
+    const {
+      data: { token },
+    } = responseJson;
 
     return token;
   }
@@ -86,7 +90,9 @@ const api = (() => {
       throw new Error(message);
     }
 
-    const { data: { user } } = responseJson;
+    const {
+      data: { user },
+    } = responseJson;
 
     return user;
   }
@@ -102,7 +108,9 @@ const api = (() => {
       throw new Error(message);
     }
 
-    const { data: { users } } = responseJson;
+    const {
+      data: { users },
+    } = responseJson;
 
     return users;
   }
@@ -118,7 +126,9 @@ const api = (() => {
       throw new Error(message);
     }
 
-    const { data: { threads } } = responseJson;
+    const {
+      data: { threads },
+    } = responseJson;
 
     return threads;
   }
@@ -134,7 +144,9 @@ const api = (() => {
       throw new Error(message);
     }
 
-    const { data: { detailThread } } = responseJson;
+    const {
+      data: { detailThread },
+    } = responseJson;
 
     return detailThread;
   }
@@ -160,7 +172,9 @@ const api = (() => {
       throw new Error(message);
     }
 
-    const { data: { thread } } = responseJson;
+    const {
+      data: { thread },
+    } = responseJson;
 
     return thread;
   }

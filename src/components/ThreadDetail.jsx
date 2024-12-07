@@ -8,14 +8,7 @@ import { postedAt } from '../utils';
 import TagItem from './TagItem';
 import { asyncUpVoteThread } from '../states/threads/action';
 
-function ThreadDetail({
-  id,
-  title,
-  body,
-  category = '',
-  createdAt,
-  owner,
-}) {
+function ThreadDetail({ id, title, body, category = '', createdAt, owner }) {
   const dispatch = useDispatch();
 
   const handleUpVote = () => {
@@ -26,11 +19,14 @@ function ThreadDetail({
     <div>
       {/* profile */}
       <div className="flex items-center gap-1">
-        <img src={owner.avatar} alt={owner.name} className="rounded-full w-10" />
+        <img
+          src={owner.avatar}
+          alt={owner.name}
+          className="rounded-full w-10"
+        />
         <h3 className="text-base font-semibold">{owner.name}</h3>
         <span className="font-normal text-slate-400 text-xs">
-          ▫
-          {postedAt(createdAt)}
+          ▫{postedAt(createdAt)}
         </span>
       </div>
       {/* body */}
@@ -44,7 +40,10 @@ function ThreadDetail({
       {/* footer */}
       <div className="flex items-center gap-5">
         <button type="button" onClick={handleUpVote}>
-          <AiTwotoneLike className="text-xl inline-block text-blue-500" id="blueLike" />
+          <AiTwotoneLike
+            className="text-xl inline-block text-blue-500"
+            id="blueLike"
+          />
         </button>
         <button type="button" onClick={handleUpVote}>
           <AiTwotoneLike className="text-xl inline-block" id="blueLike" />

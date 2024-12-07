@@ -4,23 +4,14 @@ import { AiOutlineDislike, AiTwotoneLike } from 'react-icons/ai';
 import HTMLReactParser from 'html-react-parser';
 import { postedAt } from '../utils';
 
-function CommentItem({
-  owner,
-  content,
-  createdAt,
-  upVotesBy,
-  downVotesBy,
-}) {
+function CommentItem({ owner, content, createdAt, upVotesBy, downVotesBy }) {
   return (
     <div className="comment-item">
       {/* profile */}
       <div className="flex-comment-item">
         <img src={owner.avatar} alt="halo" className="thread-img" />
         <h3>{owner.name}</h3>
-        <span>
-          ▫
-          {postedAt(createdAt)}
-        </span>
+        <span>▫{postedAt(createdAt)}</span>
       </div>
       {/* body */}
       <div className="mt-2">
@@ -33,9 +24,7 @@ function CommentItem({
           {upVotesBy.length}
         </button>
         <button type="submit">
-          <AiOutlineDislike className="text" />
-          {' '}
-          {downVotesBy.length}
+          <AiOutlineDislike className="text" /> {downVotesBy.length}
         </button>
       </div>
     </div>
