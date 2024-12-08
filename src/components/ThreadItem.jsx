@@ -7,14 +7,7 @@ import HTMLReactParser from 'html-react-parser';
 import TagItem from './TagItem';
 import { postedAt } from '../utils';
 
-function ThreadItem({
-  id,
-  title,
-  body,
-  category,
-  createdAt,
-  user,
-}) {
+function ThreadItem({ id, title, body, category, createdAt, user }) {
   return (
     <div className="profile bg-white rounded-lg shadow-md p-4 border border-gray-200">
       {/* profile */}
@@ -39,7 +32,9 @@ function ThreadItem({
         >
           {title}
         </Link>
-        <div className="threadBody mt-2 text-gray-700">{HTMLReactParser(body)}</div>
+        <div className="threadBody mt-2 text-gray-700">
+          {HTMLReactParser(body)}
+        </div>
         <div className="thread-category mt-3">
           <TagItem text={category} />
         </div>
@@ -71,7 +66,6 @@ function ThreadItem({
     </div>
   );
 }
-
 
 const userShape = {
   id: PropTypes.string.isRequired,

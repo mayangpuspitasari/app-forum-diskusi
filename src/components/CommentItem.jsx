@@ -6,25 +6,41 @@ import { postedAt } from '../utils';
 
 function CommentItem({ owner, content, createdAt, upVotesBy, downVotesBy }) {
   return (
-    <div className="comment-item">
-      {/* profile */}
-      <div className="flex-comment-item">
-        <img src={owner.avatar} alt="halo" className="thread-img" />
-        <h3>{owner.name}</h3>
-        <span>▫{postedAt(createdAt)}</span>
+    <div className="bg-gray-800 p-4 rounded-lg shadow-md mb-4">
+      {/* Profil Pengguna */}
+      <div className="flex items-center mb-3">
+        <img
+          src={owner.avatar}
+          alt={owner.name}
+          className="w-10 h-10 rounded-full mr-3"
+        />
+        <div>
+          <h3 className="text-white font-semibold">{owner.name}</h3>
+          <span className="text-sm text-gray-400">{postedAt(createdAt)}</span>
+        </div>
       </div>
-      {/* body */}
-      <div className="mt-2">
+
+      {/* Konten Komentar */}
+      <div className="mt-2 text-gray-200 text-sm">
         <p>{HTMLReactParser(content)}</p>
       </div>
-      {/* footer */}
-      <div className="flex-item">
-        <button type="submit">
-          <AiTwotoneLike className="text" />
-          {upVotesBy.length}
+
+      {/* Footer (Upvotes & Downvotes) */}
+      <div className="flex items-center mt-4 space-x-4">
+        <button
+          type="button"
+          className="flex items-center space-x-1 text-blue-500 hover:text-blue-400 transition-all"
+        >
+          <AiTwotoneLike className="text-xl" />
+          <span className="text-sm">{upVotesBy.length}</span>
         </button>
-        <button type="submit">
-          <AiOutlineDislike className="text" /> {downVotesBy.length}
+
+        <button
+          type="button"
+          className="flex items-center space-x-1 text-red-500 hover:text-red-400 transition-all"
+        >
+          <AiOutlineDislike className="text-xl" />
+          <span className="text-sm">{downVotesBy.length}</span>
         </button>
       </div>
     </div>

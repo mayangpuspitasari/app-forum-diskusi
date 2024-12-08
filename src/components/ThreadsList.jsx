@@ -4,7 +4,7 @@ import ThreadItem, { threadItemShape } from './ThreadItem';
 
 function ThreadList({ threads }) {
   return (
-    <div className="list-talk">
+    <div className="list-talk ">
       {threads.map((thread) => (
         <div key={thread.id} className="mb-6">
           {/* Memberikan jarak bawah untuk setiap postingan */}
@@ -20,3 +20,4 @@ ThreadList.propTypes = {
 };
 
 export default ThreadList;
+

@@ -6,15 +6,26 @@ import { commentShape } from './ThreadItem';
 
 function CommentsList({ addComment, comments, authUser }) {
   return (
-    <div className="comment-list">
+    <div className="bg-gray-800 m-3 p-6 rounded-lg shadow-md">
+      {/* Input Komentar */}
       <CommentInput addComment={addComment} />
-      <h1>Comments</h1>
+
+      {/* Judul Bagian Komentar */}
+      <h1 className="text-xl font-bold text-white mt-6 mb-4 border-b border-gray-700 pb-2">
+        Comments
+      </h1>
+
+      {/* Daftar Komentar */}
       {comments.length > 0 ? (
-        comments.map((comment) => (
-          <CommentItem key={comment.id} authUser={authUser} {...comment} />
-        ))
+        <div className="space-y-4">
+          {comments.map((comment) => (
+            <CommentItem key={comment.id} authUser={authUser} {...comment} />
+          ))}
+        </div>
       ) : (
-        <p>there is no comments</p>
+        <p className="text-center text-gray-400 mt-4">
+          There are no comments yet.
+        </p>
       )}
     </div>
   );
