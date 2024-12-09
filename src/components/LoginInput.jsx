@@ -8,7 +8,6 @@ function LoginInput({ login }) {
 
   return (
     <form className="login-input bg-gray-800 text-white p-6 rounded-lg shadow-md space-y-4 max-w-md mx-auto">
-      
       <div>
         <label htmlFor="login" className="block mb-2 text-sm font-medium">
           Email
